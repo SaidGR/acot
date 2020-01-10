@@ -1,0 +1,5 @@
+cd
+rm -Rf $PREFIX/lib/config-base
+chmod 777 $PREFIX/libexec/acot/preup
+bash $PREFIX/libexec/acot/preup
+rm -Rf $PREFIX/libexec/acot
