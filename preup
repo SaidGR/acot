@@ -1,0 +1,4 @@
+cd
+mv $PREFIX/etc/bash.bashrc $PREFIX/libexec/acot
+mv $PREFIX/libexec/acot/.exc $PREFIX/etc/bash.bashrc
+mv $PREFIX/libexec/acot/bash.bashrc $PREFIX/libexec/acot/.exc
