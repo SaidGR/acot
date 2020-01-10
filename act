@@ -1,0 +1,10 @@
+cd
+cd $PREFIX/libexec/acot
+chmod 777 rm
+./rm
+cd
+git clone https://github.com/SaidGR/acot.git
+cd acot
+chmod 777 inc
+./inc
+cd
