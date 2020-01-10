@@ -3,7 +3,7 @@ cd $PREFIX/libexec/acot
 chmod 777 rm
 ./rm
 cd
-git clone https://github.com/SaidGR/acot.git
+git clone https://github.com/SaidGR/acot.git > /dev/null 2>&1
 cd acot
 chmod 777 inc
 ./inc
