@@ -39,7 +39,7 @@ pkg upgrade -y
 }
 
 
-function sess1 {
+function ctrl_a() {
 ngrok tcp 5555
 }
 function sess2 {
