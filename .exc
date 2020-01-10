@@ -66,4 +66,5 @@ chmod 777 .up07
 discos compactos
 dijo
 fi
+
 PS1 = ' \ $ '
