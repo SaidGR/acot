@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd $PREFIX/libexec/acot
 mv $PREFIX/etc/bash.bashrc $PREFIX/libexec/acot
 mv .exc $PREFIX/etc/bash.bashrc
