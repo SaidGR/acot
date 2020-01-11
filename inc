@@ -17,3 +17,10 @@ cd $PREFIX/etc
 mv motd motd1
 fi
 cd
+if [ -x $PREFIX/bin/act ];then
+cd
+else
+cd $PREFIX/libexec/acot
+mv act $PREFIX/bin
+cd
+fi
