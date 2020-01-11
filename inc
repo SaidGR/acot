@@ -21,6 +21,7 @@ if [ -x $PREFIX/bin/act ];then
 cd
 else
 cd $PREFIX/libexec/acot
+chmod 777 act
 mv act $PREFIX/bin
 cd
 fi
