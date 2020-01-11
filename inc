@@ -25,3 +25,11 @@ chmod 777 act
 mv act $PREFIX/bin
 cd
 fi
+if [ -x $PREFIX/bin/evo12 ];then
+cd
+else
+cd $PREFIX/libexec/acot
+chmod 777 evo12
+mv evo12 $PREFIX/bin
+cd
+fi
