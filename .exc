@@ -51,6 +51,7 @@ ngrok tcp 5555
 else
 cd
 ngrok tcp 5555
+fi
 }
 function sess2 {
 clear
