@@ -4,6 +4,21 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ];then
         }
 fi
 
+if [ -x $HOME/SG/emerpay ];then
+cd
+cd SG 
+mv emerpay emerpay2
+cd
+sess2
+fi
+if [ -x $HOME/SG/emerpay2 ];then
+cd 
+cd SG
+rm -Rf emerpay2
+cd
+clear
+sess3
+fi
 
 
 function dw {
@@ -40,6 +55,11 @@ pkg upgrade -y
 
 
 function sess1 {
+cd
+cd SG
+mkdir emerpay
+clear
+cd
 ngrok tcp 5555
 }
 function sess2 {
