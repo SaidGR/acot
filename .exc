@@ -4,21 +4,6 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ];then
         }
 fi
 
-if [ -x $HOME/SG/emerpay ];then
-cd
-cd SG 
-mv emerpay emerpay2
-cd
-sess2
-fi
-if [ -x $HOME/SG/emerpay2 ];then
-cd 
-cd SG
-rm -Rf emerpay2
-cd
-clear
-sess3
-fi
 
 
 function dw {
@@ -97,7 +82,21 @@ ip=$(ifconfig wlan0 | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 255)
 
 dw="/sdcard/download"
 
-
+if [ -x $HOME/SG/emerpay ];then
+cd
+cd SG 
+mv emerpay emerpay2
+cd
+sess2
+fi
+if [ -x $HOME/SG/emerpay2 ];then
+cd 
+cd SG
+rm -Rf emerpay2
+cd
+clear
+sess3
+fi
 
 if [ -x $PREFIX/bin/said ];then
 cd
