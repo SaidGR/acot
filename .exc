@@ -40,7 +40,7 @@ pkg upgrade -y
 
 
 function sess1 {
-if [ $1 = "-e" ];then
+if [ "$1" = "-e" ];then
 cd
 cd SG
 mkdir emerpay
