@@ -96,6 +96,8 @@ cd
 rm -Rf $HOME/bwnzq12
 cd
 cd ..
+sleep 5
+clear
 source /data/data/com.termux/files/.tmux-bits
 case $bits-act in
 32)
