@@ -96,6 +96,7 @@ cd
 rm -Rf $HOME/bwnzq12
 cd
 cd ..
+source /data/data/com.termux/files/.tmux-bits
 case $bits-act in
 32)
 cd
