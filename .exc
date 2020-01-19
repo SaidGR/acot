@@ -100,6 +100,7 @@ chmod 777 tmux-viewer
 ;;
 esac
 fi
+}
 
 
 function acot {
