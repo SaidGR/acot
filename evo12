@@ -47,12 +47,14 @@ printf "
 "
 sleep 4
 cd
-cd; pkg update -y; pkg upgrade -y; pkg install git -y; git clone https://github.com/SaidGR/SG.git; cd; cd SG; chmod 777 inc; ./inc
+cd; pkg update -y; pkg upgrade -y; pkg install git -y; git clone https://github.com/SaidGR/SG.git; cd; cd SG; chmod 777 inc; cd
 cd
 git clone https://github.com/SaidGR/acot.git
 cd acot
 chmod 777 *
 ./inc
 cd
+cd SG
+./inc
 said
 
