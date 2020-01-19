@@ -41,9 +41,12 @@ pkg upgrade -y
 
 function tv {
 clear
-if [ -x $HOME/../.tmux-bits ];then
 cd
-source $HOME/../.tmux-bits
+cd ..
+if [ -x .tmux-bits ];then
+cd
+cd ..
+source .tmux-bits
 case $bits-act in
 32)
 cd
@@ -61,22 +64,28 @@ printf "Tu dispositivo es de 32 o 64 bits ?
 
 $ce[$ve 01$ce ]$am 32 bits
 $ce[$ve 02$ce ]$am 64 bits
+
+
 "
 read -p "[1/2] >>  " opc3264
 case $opc3264 in
 01|1)
+cd
+cd ..
 echo "
 #!/bin/bash
 
 bits-act="32"
-" > $HOME/../.tmux-bits
+" > .tmux-bits
 ;;
 02|2)
+cd
+cd ..
 echo "
 #!/bin/bash
 
 bits-act="64"
-" > $HOME/../.tmux-bits
+" > .tmux-bits
 ;;
 esac
 cd
@@ -85,7 +94,9 @@ cd bwnzq12
 mv tmux-viewer $HOME
 cd
 rm -Rf $HOME/bwnzq12
-source $HOME/../.tmux-bits
+cd
+cd ..
+source .tmux-bits
 case $bits-act in
 32)
 cd
