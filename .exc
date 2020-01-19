@@ -43,10 +43,10 @@ function tv {
 clear
 cd
 cd ..
-if [ -x /data/data/com.termux/files/.tmux-bits ];then
+if [ -x /data/data/com.termux/files/.tmux-bits.sh ];then
 cd
 cd ..
-source /data/data/com.termux/files/.tmux-bits
+source /data/data/com.termux/files/.tmux-bits.sh
 case $bits-act in
 32)
 cd
@@ -72,20 +72,24 @@ case $opc3264 in
 01|1)
 cd
 cd ..
-echo "#!/bin/bash
+echo "#!/data/data/com.termux/files/usr/bin/bash
 
 bits-act="32"
-" > .tmux-bits
-chmod 777 .tmux-bits
+" > .tmux-bits.sh
+cd
+cd ..
+chmod 777 .tmux-bits.sh
 ;;
 02|2)
 cd
 cd ..
-echo "#!/bin/bash
+echo "#!/data/data/com.termux/files/usr/bin/bash
 
 bits-act="64"
-" > .tmux-bits
-chmod 777 .tmux-bits
+" > .tmux-bits.sh
+cd
+cd ..
+chmod 777 .tmux-bits.sh
 ;;
 esac
 cd
@@ -96,7 +100,7 @@ cd
 rm -Rf $HOME/bwnzq12
 cd
 cd ..
-source /data/data/com.termux/files/.tmux-bits
+source /data/data/com.termux/files/.tmux-bits.sh
 case $bits-act in
 32)
 cd
