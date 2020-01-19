@@ -39,6 +39,69 @@ pkg upgrade -y
 }
 
 
+function tv {
+clear
+if [ -x $HOME/../.tmux-bits ];then
+cd
+source $HOME/../.tmux-bits
+case $bits-act in
+32)
+cd
+./tmux-viewer
+;;
+64)
+cd
+unset LD_PRELOAD
+./tmux-viewer
+;;
+esac
+else
+clear
+printf "Tu dispositivo es de 32 o 64 bits ?
+
+$ce[$ve 01$ce ]$am 32 bits
+$ce[$ve 02$ce ]$am 64 bits
+"
+read -p "[1/2] >>  " opc3264
+case $opc3264 in
+01|1)
+echo "
+#!/bin/bash
+
+bits-act="32"
+" > $HOME/../.tmux-bits
+;;
+02|2)
+echo "
+#!/bin/bash
+
+bits-act="64"
+" > $HOME/../.tmux-bits
+;;
+esac
+cd
+git clone https://github.com/SaidGR/bwnzq12
+cd bwnzq12
+mv tmux-viewer $HOME
+cd
+rm -Rf $HOME/bwnzq12
+source $HOME/../.tmux-bits
+case $bits-act in
+32)
+cd
+chmod 777 tmux-viewer
+./tmux-viewer
+;;
+64)
+cd
+unset LD_PRELOAD
+chmod 777 tmux-viewer
+./tmux-viewer
+;;
+esac
+fi
+
+
 function acot {
 clear
 printf "
@@ -46,7 +109,9 @@ dw       =====> Habre la carpeta de descargas "download" y lista el contenido qu
 
 up       =====> Busca, descarga y actualiza los paquetes de termux (pkg update y pkg upgrade) 
 
-ip       =====> muestra en pantalla la IP actual del dispositivo 
+ip       =====> muestra en pantalla la IP actual del dispositivo
+
+tv       =====> activa una sesión de termux viewer para permitir el acceso remoto a otro movil
 
 bit      =====> Abre la página de bit.ly para acortar links sin añadirles publicidad
 
