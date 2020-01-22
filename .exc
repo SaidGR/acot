@@ -121,31 +121,52 @@ fi
 function acot {
 clear
 printf "
-dw       =====> Habre la carpeta de descargas "download" y lista el contenido que hay en ella
-
-up       =====> Busca, descarga y actualiza los paquetes de termux (pkg update y pkg upgrade) 
-
-ip       =====> muestra en pantalla la IP actual del dispositivo
-
-tv       =====> activa una sesión de termux viewer para permitir el acceso remoto a otro movil
-
-bit      =====> Abre la página de bit.ly para acortar links sin añadirles publicidad
-
-clone    =====> Clona repositorios de git solicitando el nombre del creador y del repositorio 
-
-sess1    =====> Crea un túnel de ngrok con el puerto 5555
-
-sess2    =====> Abre una consola msfconsole, utilizando el puerto 5555 y con el host de ngrok
-
-sess3    =====> Crea un payload al que solo le debes colocar el puerto de 5 dígitos de ngrok
-
-sess4    =====> Abre una consola de metasploit solo solicitando el host y port para abrirla
-
-sess4 -u  ====> Abre una consola de metasploit utilizando el host y port del último sess4
-
-sess3 -a  ====> Crea un Payload infectado con metasploit solicitando solo el host y port
-
-sess1 -e  ====> Abre la sesión 1 y ejecutalo... Luego solo abre la sesión 2 y 3 sin colocarles ningún comando; ¿QUE HARÁ EL SCRIPT? en la sesión #1 creará el túnel con ngrok, en la sesión #2 abrirá la consola msfconsole automáticamente esperando la sesión del payload de la sesión 3.... Y por último en la sesión #3 creará un payload infectado al cual solo deberás colocarle el puerto de 5 dígitos que te brinda ngrok en la sesión 1
+___________________________________________________________________
+|                                                                   |
+| dw       =====> Habre la carpeta de descargas download y lista el |
+|                 contenido que hay en ella                         |
+|___________________________________________________________________|
+| up       =====> Busca, descarga y actualiza los paquetes de termux|
+|                 (pkg update y pkg upgrade)                        |
+|___________________________________________________________________|
+| ip       =====> muestra en pantalla la IP actual del dispositivo  |
+|___________________________________________________________________|
+| tv       =====> activa una sesión de termux viewer para permitir  |
+|                 el acceso remoto a otro movil                     |
+|___________________________________________________________________|
+| bit      =====> Abre la página de bit.ly para acortar links si    |
+|                 añadirles publicidad                              |
+|___________________________________________________________________|
+| clone    =====> Clona repositorios de git solicitando el nombr    |
+|                 del creador y del repositorio                     |
+|___________________________________________________________________|
+| sess1    =====> Crea un túnel de ngrok con el puerto 5555         |
+|___________________________________________________________________|
+| sess2    =====> Abre una consola msfconsole, utilizando el puerto |
+|                 5555 y con el host de ngrok                       |
+|___________________________________________________________________|
+| sess3    =====> Crea un payload al que solo le debes colocar el   |
+|                 puerto de 5 dígitos de ngrok                      |
+|___________________________________________________________________|
+| sess4    =====> Abre una consola de metasploit solo solicitando el|
+|                 host y port para abrirla                          |
+|___________________________________________________________________|
+| sess4 -u  ====> Abre una consola de metasploit utilizando el host |
+|                 y port del último sess4                           |
+|___________________________________________________________________|
+| sess3 -a  ====> Crea un Payload infectado con metasploit          |
+|                 solicitando solo el host y port                   |
+|___________________________________________________________________|
+| sess1 -e  ====> Abre la sesión 1 y ejecutalo... Luego solo abre la|
+|                 sesión 2 y 3 sin colocarles ningún comando;       |
+|                 ¿QUE HARÁ EL SCRIPT? en la sesión #1 creará el    |
+|                 túnel con ngrok, en la sesión #2 abrirá la consola|
+|                 msfconsole automáticamente esperando la sesión del|
+|                 payload de la sesión 3.... Y por último en la     |
+|                 sesión #3 creará un payload infectado al cual solo|
+|                 deberás colocarle el puerto de 5 dígitos que te   |
+|                 brinda ngrok en la sesión 1                       |
+|___________________________________________________________________|
 "
 }
 
