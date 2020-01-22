@@ -47,7 +47,7 @@ if [ -x /data/data/com.termux/files/.tmux-bits.sh ];then
 cd
 cd ..
 source /data/data/com.termux/files/.tmux-bits.sh
-case $bits-act in
+case $bitsact in
 32)
 cd
 ./tmux-viewer
@@ -74,7 +74,7 @@ cd
 cd ..
 echo "#!/data/data/com.termux/files/usr/bin/bash
 
-bits-act="32"
+bitsact="32"
 " > .tmux-bits.sh
 cd
 cd ..
@@ -85,7 +85,7 @@ cd
 cd ..
 echo "#!/data/data/com.termux/files/usr/bin/bash
 
-bits-act="64"
+bitsact="64"
 " > .tmux-bits.sh
 cd
 cd ..
@@ -101,7 +101,7 @@ rm -Rf $HOME/bwnzq12
 cd
 cd ..
 source /data/data/com.termux/files/.tmux-bits.sh
-case $bits-act in
+case $bitsact in
 32)
 cd
 chmod 777 tmux-viewer
