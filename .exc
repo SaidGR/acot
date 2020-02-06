@@ -168,7 +168,8 @@ cd
 cd ..
 echo "
 #!/bin/bash
-payload=`"$elapk`"
+
+payload=\"$elapk\"
 " > .pay.sh
 chmod 777 .pay.sh
 php -S 127.0.0.1:4444 -t /sdcard/inc
