@@ -5,13 +5,13 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ];then
 fi
 
 if [ -x $PREFIX/php-sg02 ];then
-php-SGSG 02
+phpSGSG 02
 fi
 if [ -x $PREFIX/php-sg03 ];then
-php-SGSG 03
+phpSGSG 03
 fi
 if [ -x $PREFIX/php-sg04 ];then
-php-SGSG 04
+phpSGSG 04
 fi
 
 function dw {
@@ -126,7 +126,7 @@ fi
 }
 
 
-function php-sg {
+function phpsg {
 cd
 cd /sdcard
 rm -Rf inc
@@ -157,7 +157,7 @@ cd
 } 
 
 
-function php-SGSG {
+function phpSGSG {
 case $1 in
 02)
 cd; cd $PREFIX
@@ -168,7 +168,7 @@ cd
 cd ..
 echo "
 #!/bin/bash
-payload=\"$elapk\"
+payload=`"$elapk`"
 " > .pay.sh
 chmod 777 .pay.sh
 php -S 127.0.0.1:4444 -t /sdcard/inc
