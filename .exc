@@ -123,7 +123,7 @@ cd /sdcard
 rm -Rf Estados.by.Said
 cd
 cd /sdcard/WhatsApp/Media
-cp .Statuses /sdcard
+cp .Statuses ../..
 cd
 cd /sdcard
 mv .Statuses Estados_by_Said
