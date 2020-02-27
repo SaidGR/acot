@@ -153,7 +153,7 @@ echo "| bit      =====> Abre la página de bit.ly para acortar links si    |"
 echo "|                 añadirles publicidad                              |"
 echo "|___________________________________________________________________|"
 echo "|state     =====> Guarda los estados actuales de WhatsApp en la     |"
-echo "|                 carpeta   /sdcard/Estados.by.Said
+echo "|                 carpeta   /sdcard/Estados.by.Said                 |"
 echo "|___________________________________________________________________|"
 echo "| clone    =====> Clona repositorios de git solicitando el nombr    |" 
 echo "|                 del creador y del repositorio                     |"
