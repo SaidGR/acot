@@ -120,13 +120,15 @@ fi
 function state {
 cd
 cd /sdcard
+if [ -x /sdcard/Estados.by.Said ];then
 rm -Rf Estados.by.Said
+fi
 cd
 cd /sdcard/WhatsApp/Media
 cp .Statuses ../..
 cd
 cd /sdcard
-mv .Statuses Estados_by_Said
+mv .Statuses Estados.by.Said
 cd
 } 
 
