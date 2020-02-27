@@ -126,9 +126,8 @@ cd /sdcard/WhatsApp/Media
 cp .Statuses /sdcard
 cd
 cd /sdcard
-mv .Statuses Estados.by.Said
+mv .Statuses Estados_by_Said
 cd
-clear
 } 
 
 
