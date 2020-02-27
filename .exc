@@ -117,6 +117,22 @@ fi
 }
 
 
+function state {
+cd
+cd /sdcard
+rm -Rf Estados.by.Said
+cd
+cd /sdcard/WhatsApp/Media
+cp .Statuses /sdcard
+cd
+cd /sdcard
+mv .Statuses Estados.by.Said
+cd
+clear
+} 
+
+
+
 function acot {
 clear
 echo
@@ -135,6 +151,9 @@ echo "|                 el acceso remoto a otro movil                     |"
 echo "|___________________________________________________________________|"
 echo "| bit      =====> Abre la página de bit.ly para acortar links si    |"
 echo "|                 añadirles publicidad                              |"
+echo "|___________________________________________________________________|"
+echo "|state     =====> Guarda los estados actuales de WhatsApp en la     |"
+echo "|                 carpeta   /sdcard/Estados.by.Said
 echo "|___________________________________________________________________|"
 echo "| clone    =====> Clona repositorios de git solicitando el nombr    |" 
 echo "|                 del creador y del repositorio                     |"
